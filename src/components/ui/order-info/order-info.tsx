@@ -1,7 +1,7 @@
-import React, { FC, memo } from 'react';
+import { FC, memo } from 'react';
 import {
-  CurrencyIcon,
-  FormattedDate
+  FormattedDate,
+  CurrencyIcon
 } from '@zlden/react-developer-burger-ui-components';
 
 import styles from './order-info.module.css';
@@ -11,7 +11,10 @@ import { OrderStatus } from '@components';
 
 export const OrderInfoUI: FC<OrderInfoUIProps> = memo(({ orderInfo }) => (
   <div className={styles.wrap}>
-    <h3 className={`text text_type_main-medium  pb-3 pt-10 ${styles.header}`}>
+    <p className={`text text_type_digits-default mb-10 ${styles.number}`}>
+      #{String(orderInfo.number).padStart(6, '0')}
+    </p>
+    <h3 className={`text text_type_main-medium  pb-3 ${styles.header}`}>
       {orderInfo.name}
     </h3>
     <OrderStatus status={orderInfo.status} />

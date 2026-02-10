@@ -26,10 +26,6 @@ export const IngredientsCategory = forwardRef<
     return counters;
   }, [burgerConstructor]);
 
-  ingredients.forEach((ingredient: TIngredient) => {
-    ingredientsCounters[ingredient._id] = 0;
-  });
-
   return (
     <IngredientsCategoryUI
       title={title}

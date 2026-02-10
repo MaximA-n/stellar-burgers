@@ -24,7 +24,7 @@ import { setIsAuthChecked } from '../../services/user/actions';
 
 const App = () => {
   const location = useLocation();
-  const backgroundLocation = location.state?.backgroundLocation;
+  const backgroundLocation = location.state && location.state.background;
   const navigate = useNavigate();
   const dispatch = useDispatch();
 
